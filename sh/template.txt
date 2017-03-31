@@ -1,0 +1,27 @@
+#!/bin/bash
+
+while [[ $# -gt 1 ]]; do
+
+case $1 in
+    -c|--command)
+    DoX
+    shift
+    ;;
+    -f|--function)
+    Dof
+    shift
+    ;;
+    -h|--help)
+    echo "Makes a Bash script (.sh)."
+    echo -e "Usage: shell [name] [-c|-f]\n"
+    echo "  -h, --help                  Display this help section."
+    echo "  -c, --command               Structure the bash script as a bash command (e.g: js.sh)"
+    echo "  -f, --function              Structure the bash script as a functional script (e.g: pde.sh)"
+    shift
+    ;;
+    *)
+    # unknown option
+    ;;
+esac
+shift # past argument or value
+done
